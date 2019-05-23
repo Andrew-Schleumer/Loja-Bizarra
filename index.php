@@ -8,23 +8,24 @@
     </head>
     <body background="imgs/background.jpg">
 
+        <?php include 'classes/conexao.php'; ?>
         <?php include 'frags/header.php'; ?>
 
         <div class="container-fluid">
 
             <div class="row"> 
 
-                
-                    <div class="container"> 
-                        <div class="col transparent" style="background-color: whitesmoke">
-                            <div class="row">
-                                <div class="col-8 ">
-                                    
-                                </div>
+
+                <div class="container"> 
+                    <div class="col transparent" style="background-color: whitesmoke">
+                        <div class="row">
+                            <div class="col-8 ">
+
                             </div>
                         </div>
                     </div>
-                
+                </div>
+
             </div>
 
         </div>
