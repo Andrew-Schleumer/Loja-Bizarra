@@ -46,7 +46,7 @@
                     <br>
                     <div class="row">
                         <div class='col-12'>
-                            <?php if ($tipo_conta == "comprador"): ?>
+                            <?php if ($_SESSION['tipo'] == "comprador"): ?>
                                 <h3>Pedidos</h3>
                                 <table class="table">
                                     <thead class="thead-dark">

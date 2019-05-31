@@ -23,6 +23,7 @@
 
             $conta = new Conta();
             $conta->insertConta([$tipo, $nome, $endereco, $cpf, $login, $senha]);
+            header("location:login.php");
         }
         ?>
 
@@ -32,7 +33,7 @@
 
                 <div class="col-8" style="background-color: rgba(245, 245, 245, 0.4);">
 
-                    <form method='post' action='login.php'>
+                    <form method='post'>
                         <h3>Cadastro</h3>
                         <div class="form-group">
                             <label for="login">Login</label>

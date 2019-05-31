@@ -18,6 +18,11 @@
 
                             <br>
                             <?php
+                            
+                            if ($_SESSION['tipo'] != "comprador"){
+                                header("location:index.php");
+                            }
+                            
                             $id = $_GET['idp'];
                             $produto = new Produto();
                             $dados = $produto->obterDados($id);
@@ -54,7 +59,7 @@
                                         <input type="text" class="form-control" name='ds' value="<?= $dado['ds_produto'] ?>" readonly style='background-color: white;'>
                                     </div>
                                     <h4>Imagem:</h4>
-                                    <img src="<?= $dado['dir_foto'] ?>" class="thumbnail">
+                                    <img src="<?= $dado['dir_foto']?>" class="img-thumbnail">
                                     <input type="submit" class='btn btn-dark' name='pedido' value='Comprar Produto'>
                                 </form>
 

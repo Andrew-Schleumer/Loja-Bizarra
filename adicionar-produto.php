@@ -23,32 +23,30 @@ and open the template in the editor.
 
                             <br>
                             <?php
+                            
+                            if ($_SESSION['tipo'] != "fornecedor"){
+                                header("location:index.php");
+                            }
+                            
                             $nome = $_POST['nome'] ?? null;
                             $valor = $_POST['valor'] ?? null;
                             $ds = $_POST['ds'] ?? null;
                             $cam_foto = "uploads/" . $_SESSION['id'] . "/";
                             $dir_foto;
-                            
-                            if(isset($_POST['addProd'])) {
-                                if(!file_exists($cam_foto)){
+
+                            if (isset($_POST['addProd'])) {
+                                if (!file_exists($cam_foto)) {
                                     mkdir($cam_foto);
                                 }
-                                
-                                
-                                if ($_FILES["file"]["error"] > 0) {
-                                    echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
+                                if (file_exists("upload/" . $_FILES["file"]["name"])) {
+                                    echo $_FILES["file"]["name"] . " already exists. ";
                                 } else {
-                                    if (file_exists("upload/" . $_FILES["file"]["name"])) {
-                                        echo $_FILES["file"]["name"] . " already exists. ";
-                                    } else {
-                                        move_uploaded_file($_FILES["file"]["tmp_name"], $cam_foto . $_FILES["file"]["name"]);
-                                        $dir_foto = $cam_foto . $_FILES["file"]["name"];
-                                    }
+                                    move_uploaded_file($_FILES["file"]["tmp_name"], $cam_foto . $_FILES["file"]["name"]);
+                                    $dir_foto = $cam_foto . $_FILES["file"]["name"];
                                 }
-                                $produto = new Produto();
-                                $produto->insertProduto([$nome, $valor, $ds, (int)$_SESSION['id'], (String)$dir_foto]);
                             }
-                            
+                            $produto = new Produto();
+                            $produto->insertProduto([$nome, $valor, $ds, (int) $_SESSION['id'], (String) $dir_foto]);
                             ?>
                             <h3>Editar Perfil</h3>
                             <form method="post" enctype="multipart/form-data">

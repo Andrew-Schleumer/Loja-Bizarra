@@ -15,13 +15,6 @@
         $produto = new Produto();
         $dados = $produto->obterDados($id);
         ?>
-
-
-
-
-
-
-
         <div class="container-fluid">
 
             <div class="row"> 
@@ -33,7 +26,7 @@
                                     <img src="<?=$dado['dir_foto']?>" class="card-img-top">
                                     <div class="card-body">
                                         <h5 class="card-title"><?=$dado['nm_produto']?></h5>
-                                        <p class="card-text">S<?=$dado['ds_produto']?></p>
+                                        <p class="card-text"><?=$dado['ds_produto']?></p>
                                     </div>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item"><?=$dado['vl_produto']?></li>

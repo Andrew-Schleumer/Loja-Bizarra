@@ -18,6 +18,11 @@
 
                             <br>
                             <?php
+                            
+                            if ($_SESSION['tipo'] != "fornecedor"){
+                                header("location:index.php");
+                            }
+                            
                             $id = $_GET['idp'];
                             $produto = new Produto();
                             $dados = $produto->obterDados($id);

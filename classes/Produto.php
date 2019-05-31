@@ -12,6 +12,12 @@ Class Produto extends Conexao {
         return $instrucao->fetchAll();
     }
     
+    public function obterProdutosFornecedor($id) {
+
+        $instrucao = $this->pdo->query("SELECT * FROM produto WHERE id_fornecedor=$id;");
+        return $instrucao->fetchAll();
+    }
+    
     public function obterDados($id) {
 
         $instrucao = $this->pdo->query("SELECT * FROM produto WHERE id_produto = $id;");

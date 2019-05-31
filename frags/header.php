@@ -45,6 +45,7 @@ if ($login != null && $senha != null) {
         foreach ($dados as $dado) {
             $_SESSION['nome'] = $dado['nm_nome'];
             $_SESSION['id'] = $dado['id_conta'];
+            $_SESSION['tipo'] = $dado['nm_tipo'];
         }
         
     }

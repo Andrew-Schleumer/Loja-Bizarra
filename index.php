@@ -27,6 +27,7 @@
                                         <img src="<?= $dado['dir_foto'] ?>" class="card-img-top">
                                         <div class="card-body">
                                             <h5 class="card-title"><?= $dado['nm_produto'] ?></h5>
+                                            <a href="produtos.php?idf=<?= $dado['id_fornecedor'] ?>"><p class="card-text">Fornecedor: <?= $dado['id_fornecedor'] ?></p></a>
                                             <p class="card-text"><?= $dado['ds_produto'] ?></p>
                                         </div>
                                         <ul class="list-group list-group-flush">
