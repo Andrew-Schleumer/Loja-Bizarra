@@ -28,9 +28,14 @@ and open the template in the editor.
                             $dados = $produto->obterDados($id);
 
                             if(isset($_POST['excProd'])){
+                                try{
                                 $produto->excluir($id);
                                 header("location:perfil.php");
-                            }
+                                } catch(Exception $e){
+                                    ?> <h3>Não pode excluir item ja vendido</h3> <?php
+                                }
+                                
+                                }
                             
                             
                             foreach ($dados as $dado):
@@ -38,7 +43,7 @@ and open the template in the editor.
 
 
                                 <h3>Excluir Produto</h3>
-                                <form method="post" enctype="multipart/form-data">
+                                <form method="post">
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">ID do Produto</label>
                                         <input type="text" class="form-control" value='<?= $id ?>' readonly style='background-color: white;'>
