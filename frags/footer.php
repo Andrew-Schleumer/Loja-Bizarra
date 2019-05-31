@@ -1,4 +1,4 @@
-<footer class="footer bg-dark">
+<footer class="bg-dark fixed-bottom" style="width: 100%;">
     <div class="container ">
       <span style="color:whitesmoke"> Andrew </span>
     </div>
